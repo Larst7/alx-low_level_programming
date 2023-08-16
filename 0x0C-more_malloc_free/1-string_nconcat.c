@@ -43,4 +43,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	return (s);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 902a0195a7dba1f42da5091d3b9eeed0c6f021c6
