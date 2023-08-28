@@ -3,7 +3,11 @@
 #include "lists.h"
 
 /**
+<<<<<<< HEAD
  * * add_node_end - Appends a new node to the end of a linked list
+=======
+ * add_node_end - Appends a new node to the end of a linked list
+>>>>>>> 40262e3c0c2687f43d32960ebe2a444042827d1c
  * @head: Pointer to the list_t list
  * @str: String to be stored in the new node
  *

@@ -23,10 +23,18 @@ list_t *add_node(list_t **head, const char *str)
 	if (!new_node)
 		return (NULL);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40262e3c0c2687f43d32960ebe2a444042827d1c
 	new_node->str = strdup(str);
 	new_node->len = str_length;
 	new_node->next = (*head);
 	(*head) = new_node;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40262e3c0c2687f43d32960ebe2a444042827d1c
 	return (*head);
 }
