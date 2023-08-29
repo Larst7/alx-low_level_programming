@@ -8,7 +8,7 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t distance = 0;
+	size_t len = 0;
 	listint_t *node;
 
 	if (!h || !*h)
@@ -20,8 +20,8 @@ size_t free_listint_safe(listint_t **h)
 		free(*h);
 		*h = NULL;
 		*h = node;
-		distance++;
+		len++;
 	}
 
-	return (distance);
+	return (len);
 }
