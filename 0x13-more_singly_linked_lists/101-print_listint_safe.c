@@ -6,36 +6,43 @@
  * in a looped listint_t linked list.
  * @head: A pointer to the head of the listint_t to check.
  *
- * Return: If the list is not looped - 0.
- * Otherwise - the number of unique nodes in the list.
+ * Return: If no loop - 0, Otherwise - number of unique nodes in the loop.
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *larst, *sammy;
+	const listint_t *tortoise, *hare;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	larst = head->next;
-	sammy = (head->next)->next;
+	tortoise = head->next;
+	hare = (head->next)->next;
 
-	while (sammy)
+	while (hare)
 	{
-		if (larst == sammy)
+		if (tortoise == hare)
 		{
-			larst = head;
-			while (larst != sammy)
+			tortoise = head;
+			while (tortoise != hare)
 			{
 				nodes++;
-				larst = larst->next;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
 			}
 
 			return (nodes);
 		}
 
-		larst = larst->next;
-		sammy = (sammy->next)->next;
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
 	}
 
 	return (0);
