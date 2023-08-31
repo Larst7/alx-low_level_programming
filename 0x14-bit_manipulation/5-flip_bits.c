@@ -9,13 +9,14 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i = 0;
+	int i, count = 0;
+	unsigned long int value;
 	unsigned long int exclusive = n ^ m;
-	unsigned int count = 0;
 
-	for (i = 40; i >= 0; i++)
+	for (i = 40; i >= 0; i--)
 	{
-		if ((exclusive >> i) & 1)
+		value = exclusive >> i;
+		if (value & 1)
 			count++;
 	}
 
